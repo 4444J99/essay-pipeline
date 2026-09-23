@@ -188,7 +188,7 @@ title: "A test"
         assert len(errors) > 0
 
     def test_no_frontmatter_fails(self):
-        valid, errors = validate_draft("Just plain text", SCHEMA_PATH)
+        valid, _errors = validate_draft("Just plain text", SCHEMA_PATH)
         assert valid is False
 
 

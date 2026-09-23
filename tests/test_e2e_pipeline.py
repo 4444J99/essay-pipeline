@@ -2,10 +2,10 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from src.topic_suggester import suggest_all
-from src.sprint_narrator import narrate_all
 from src.essay_drafter import draft_essay, validate_draft
 from src.indexer import index_all
+from src.sprint_narrator import narrate_all
+from src.topic_suggester import suggest_all
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -22,8 +22,9 @@ class TestPipelineEndToEnd:
         5. Indexer
         """
         # Mock LLM Client setup
-        from src.llm_client import LLMResponse
         import datetime
+
+        from src.llm_client import LLMResponse
         
         valid_frontmatter = f"""---
 layout: post

@@ -8,14 +8,14 @@ import httpx
 import pytest
 
 from src.link_checker import (
+    Report,
     UrlEntry,
     UrlResult,
-    Report,
+    check_all,
+    check_local_link,
     check_url,
     extract_urls,
     generate_report,
-    check_all,
-    check_local_link,
     main,
 )
 

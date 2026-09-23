@@ -22,7 +22,6 @@ import urllib.request
 from dataclasses import dataclass
 from typing import Protocol
 
-
 PIPELINE_VERSION = "0.3.0"
 
 

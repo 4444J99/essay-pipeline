@@ -4,14 +4,14 @@ import os
 from unittest.mock import patch
 
 from src.llm_client import (
+    PRIORITY_ORDER,
+    PROVIDERS,
     AnthropicClient,
     GeminiClient,
     LLMResponse,
     OllamaClient,
     OpenAIClient,
     PerplexityClient,
-    PRIORITY_ORDER,
-    PROVIDERS,
     create_client,
 )
 
@@ -238,7 +238,7 @@ class TestProviderRegistry:
             assert hasattr(cls, "from_env"), f"{name} missing from_env"
 
     def test_all_providers_have_configured(self):
-        for name, cls in PROVIDERS.items():
+        for cls in PROVIDERS.values():
             instance = cls()
             # Should not raise
             _ = instance.configured
