@@ -1,13 +1,10 @@
 """Tests for the HMAC offline license key system."""
 
 from datetime import date
+
 import pytest
 
 from src.license import (
-    KNOWN_SKUS,
-    PREMIUM_BUNDLE_SKU,
-    PREMIUM_SINGLE_SKU,
-    PREMIUM_SUBSCRIPTION_SKU,
     License,
     LicenseError,
     is_valid,
@@ -78,7 +75,7 @@ class TestRoundtrip:
 
     def test_tampered_payload_rejected(self):
         key = issue_license("buyer@example.com", secret=SECRET)  # allow-secret
-        prefix, payload, sig = key.split(".")
+        prefix, _payload, sig = key.split(".")
         tampered_key = f"{prefix}.AAAA.{sig}"  # allow-secret
         with pytest.raises(LicenseError, match="mismatch|corrupt"):
             verify_license(tampered_key, secret=SECRET)  # allow-secret

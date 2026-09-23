@@ -1,16 +1,15 @@
 """Tests for the frontmatter validator."""
 
 from pathlib import Path
-
 from unittest.mock import patch
 
 from src.schema_loader import load_schema
 from src.validator import (
     extract_frontmatter,
+    main,
     validate_all,
     validate_essay,
     validate_field,
-    main,
 )
 
 FIXTURES = Path(__file__).parent / "fixtures"

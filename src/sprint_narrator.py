@@ -73,8 +73,8 @@ def summarize_github_activity(report: dict) -> str:
     breakdown = gh.get("organ_breakdown", {})
 
     parts = [
-        f"Across all organs, there were **{commits} commits**, "
-        f"**{prs} PRs**, and **{releases} releases**."
+        (f"Across all organs, there were **{commits} commits**, "
+        f"**{prs} PRs**, and **{releases} releases**.")
     ]
 
     active = []
@@ -185,9 +185,9 @@ def generate_narrative(
         "",
         "## Sprint Summary",
         "",
-        f"This sprint covered the period from {start} to {end} across the ORGANVM system. "
+        (f"This sprint covered the period from {start} to {end} across the ORGANVM system. "
         f"Below is an automated summary of web engagement, GitHub activity, essay corpus "
-        f"status, and publication cadence.",
+        f"status, and publication cadence."),
         "",
         "## Web Engagement",
         "",

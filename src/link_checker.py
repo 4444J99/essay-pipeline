@@ -18,7 +18,6 @@ from urllib.parse import urlparse
 
 import httpx
 
-
 # --- Data types -----------------------------------------------------------
 
 
@@ -69,7 +68,7 @@ def _should_skip(url: str) -> bool:
         return True
     if _POST_URL_RE.search(url):
         return True
-    if url.startswith("{{") or url.startswith("{%"):
+    if url.startswith(("{{", "{%")):
         return True
     parsed = urlparse(url)
     if parsed.scheme in _SKIP_SCHEMES:

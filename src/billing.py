@@ -15,10 +15,11 @@ import json
 import os
 import sys
 import time
+from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 
 import httpx
 

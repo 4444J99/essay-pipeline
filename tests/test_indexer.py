@@ -8,9 +8,9 @@ from src.indexer import (
     build_essays_index,
     build_logs_index,
     build_publication_calendar,
+    compute_readability,
     extract_essay_data,
     index_all,
-    compute_readability,
 )
 
 

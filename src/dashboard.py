@@ -299,10 +299,7 @@ def build_alert_summary(report: dict) -> dict:
 
     highest = ""
     if items:
-        highest = sorted(
-            [item["severity"] for item in items],
-            key=lambda severity: SEVERITY_ORDER.get(severity, 99),
-        )[0]
+        highest = min([item["severity"] for item in items], key=lambda severity: SEVERITY_ORDER.get(severity, 99))
 
     return {
         "count": len(items),

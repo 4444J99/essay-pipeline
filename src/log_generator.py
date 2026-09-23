@@ -26,7 +26,6 @@ import urllib.request
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
-
 # Organ directory name → (numeral, full name)
 ORGAN_MAP: dict[str, tuple[str, str]] = {
     "organvm-i-theoria": ("I", "Theoria"),
@@ -86,7 +85,7 @@ def find_git_repos(workspace: Path) -> list[Path]:
             return []
         
         repo_paths = [Path(line).parent for line in result.stdout.strip().splitlines() if line]
-        return sorted(list(set(repo_paths)))
+        return sorted(set(repo_paths))
     except (subprocess.TimeoutExpired, FileNotFoundError):
         return []
 

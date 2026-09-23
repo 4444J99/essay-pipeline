@@ -268,8 +268,8 @@ def main():
 
     summary = index_all(args.posts_dir, args.output_dir, args.logs_dir)
     parts = [
-        f"{summary['essays']} essays across "
-        f"{summary['categories']} categories ({summary['total_words']} words)"
+        (f"{summary['essays']} essays across "
+        f"{summary['categories']} categories ({summary['total_words']} words)")
     ]
     if "logs" in summary:
         parts.append(f"{summary['logs']} logs")
