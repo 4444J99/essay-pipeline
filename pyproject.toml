@@ -25,5 +25,12 @@ essay-license = "src.license:main"
 essay-dashboard = "src.dashboard:main"
 essay-billing = "src.billing:main"
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "templates*"]
+
+[tool.setuptools.package-data]
+"templates" = ["*", "**/*"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

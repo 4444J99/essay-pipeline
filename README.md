@@ -51,14 +51,19 @@ source .venv/bin/activate
 pip install -e .[dev]
 ```
 
-Verify the console scripts are available:
+Verify the console scripts are available using a one-step smoke command:
 
 ```bash
-essay-validate --help
 essay-template list
 ```
 
-For template-library use without test tooling, `pip install -e .` is enough.
+Output should list available open and locked template entries. You can also run:
+
+```bash
+essay-dashboard --help
+```
+
+For template-library use without test tooling, `pip install .` or `pip install -e .` is enough.
 
 ## Usage
 

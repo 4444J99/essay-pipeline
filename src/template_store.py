@@ -22,7 +22,10 @@ import yaml
 
 from .license import LicenseError, verify_license
 
-TEMPLATES_DIR = Path(__file__).resolve().parents[1] / "templates"
+_SRC_DIR = Path(__file__).resolve().parent
+_REPO_TEMPLATES = _SRC_DIR.parent / "templates"
+_PKG_TEMPLATES = _SRC_DIR / "templates"
+TEMPLATES_DIR = _REPO_TEMPLATES if _REPO_TEMPLATES.exists() else _PKG_TEMPLATES
 MANIFEST_NAME = "manifest.yaml"
 
 
